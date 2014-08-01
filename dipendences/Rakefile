@@ -1,0 +1,19 @@
+#!/usr/bin/env rake
+require 'rake/testtask'
+
+task :default => [:check]
+
+desc 'Check if required commands exists'
+task :check do
+  # Checking availability of file
+  raise 'This gem won\'t work on windows platform' if Gem.win_platform?
+
+  unless system("which file > /dev/null")
+    raise 'Installation failure! Please install libmagic on your system.'
+  end
+
+  unless system("which awk > /dev/null")
+    raise 'Installation failure! Please install awk on your system.'
+  end
+end
+
