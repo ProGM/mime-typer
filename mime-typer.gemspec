@@ -1,8 +1,8 @@
 lib = 'mime-typer'
 Gem::Specification.new do |s|
   s.name        = 'mime-typer'
-  s.version     = '0.1'
-  s.date        = '2014-07-31'
+  s.version     = '0.2'
+  s.date        = '2014-08-04'
   s.summary     = 'MIME Typer'
   s.description = 'A gem to detect mime type of a file, using libmagic.'
   s.authors     = ['Piero Dotti']
@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.extensions   = %w(dipendences/Rakefile)
 
-  s.files = %w(Gemfile LICENSE README.md Rakefile dog.jpg)
+  s.files = %w(Gemfile LICENSE README.md Rakefile test.png)
   s.files << "#{lib}.gemspec"
   s.files += Dir.glob("lib/**/*.rb")
   s.files += Dir.glob("test/**/*.rb")
