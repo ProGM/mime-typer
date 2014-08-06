@@ -27,4 +27,11 @@ class MimeTyperTest < MyTest
     assert_equal 'application/pdf', result
     puts 'Remote detection tests complete'
   end
+
+  def test_uri_recognition_ssl
+    puts 'Checking detection by uri . . . '
+    result = MIME::Typer.remote('https://www.adobe.com/enterprise/accessibility/pdfs/acro6_pg_ue.pdf')
+    assert_equal 'application/pdf', result
+    puts 'Remote detection tests complete'
+  end
 end

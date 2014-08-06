@@ -61,7 +61,8 @@ module MIME
     def self.load_remote(uri, bytes = 200)
       result = ''
       uri = URI(uri)
-      Net::HTTP.start(uri.host, uri.port) do |http|
+      ssl = uri.scheme == 'https'
+      Net::HTTP.start(uri.host, uri.port, use_ssl: ssl) do |http|
         request = Net::HTTP::Get.new(uri.request_uri)
         http.request(request) do |response|
           result = response.socket.read(bytes)
